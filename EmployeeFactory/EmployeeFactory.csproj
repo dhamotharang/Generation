@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\FrameworkSetting\FrameworkSetting.csproj" />
+    <ProjectReference Include="..\GenerationFactory\GenerationFactory.csproj" />
     <ProjectReference Include="..\Library\Library.csproj" />
   </ItemGroup>
 
