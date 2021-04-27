@@ -20,5 +20,11 @@ namespace Common.Modules
         public string CreatedDate { get; set; }
         public Guid? UpdatedBy { get; set; }
         public string UpdatedDate { get; set; }
+
+        public Guid? DepartmentId { get; set; }
+        public Guid? PositionId { get; set; }
+        public Guid? ManagerId { get; set; }
+
+        public DepartmentModel Department { get; set; }
     }
 }

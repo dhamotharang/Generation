@@ -16,5 +16,13 @@ namespace EmployeeFactory.DataProviders
         public DateTime? CreatedDate { get; set; }
         public Guid? UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
+
+        // Add new columns
+        public Guid? DepartmentId { get; set; }
+        public Guid? PositionId { get; set; }
+        public Guid? ManagerId { get; set; }
+
+        // Relationship objects
+        public Department Department { get; set; }
     }
 }
