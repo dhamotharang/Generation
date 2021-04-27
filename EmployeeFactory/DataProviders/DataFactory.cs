@@ -17,7 +17,7 @@ namespace EmployeeFactory.DataProviders
             try
             {
                 using var context = new EmployeeContext();
-                var data = context.Employee.Include(s => s.Department).FirstOrDefault(o => o.Id.Equals(detailId));
+                var data = context.Employee.Include(s => s.Department).Include(s => s.Position).FirstOrDefault(o => o.Id.Equals(detailId));
                 if (data == null)
                 {
                     return new ResponseOutput<object>(null, NotificationType.Error, GenerationStatusCode.NotFound, GenerationResource.MSG_006, null);

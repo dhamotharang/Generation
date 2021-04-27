@@ -24,5 +24,6 @@ namespace EmployeeFactory.DataProviders
 
         // Relationship objects
         public Department Department { get; set; }
+        public Position Position { get; set; }
     }
 }

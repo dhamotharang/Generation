@@ -6,6 +6,7 @@ namespace EmployeeFactory.DataProviders
     {
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Department> Department { get; set; }
+        public virtual DbSet<Position> Position { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
@@ -17,9 +18,7 @@ namespace EmployeeFactory.DataProviders
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>()
-                .HasOne(e => e.Department)
-                .WithMany(d => d.Employees);
+
         }
     }
 }

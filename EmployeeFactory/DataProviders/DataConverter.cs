@@ -13,9 +13,8 @@ namespace EmployeeFactory.DataProviders
         {
             mapperConfiguration = new MapperConfiguration(c =>
             {
-                c.CreateMap<Department, DepartmentModel>()
-                    .ForMember(d => d.DepartmentCode, o => o.MapFrom(s => s.DepartmentCode))
-                    .ForMember(d => d.DepartmentName, o => o.MapFrom(s => s.DepartmentName));
+                c.CreateMap<Department, DepartmentModel>();
+                c.CreateMap<Position, PositionModel>();
 
                 c.CreateMap<Employee, EmployeeModel>()
                     .ForMember(d => d.DayOfBirth, o => o.MapFrom(s => GenerationHelper.ToStringByFormatter(s.DayOfBirth, GenerationFormatter.StandardFormatter)))
@@ -23,7 +22,8 @@ namespace EmployeeFactory.DataProviders
                     .ForMember(d => d.LeftDate, o => o.MapFrom(s => GenerationHelper.ToStringByFormatter(s.LeftDate, GenerationFormatter.StandardFormatter)))
                     .ForMember(d => d.CreatedDate, o => o.MapFrom(s => GenerationHelper.ToStringByFormatter(s.CreatedDate, GenerationFormatter.StandardFormatter)))
                     .ForMember(d => d.UpdatedDate, o => o.MapFrom(s => GenerationHelper.ToStringByFormatter(s.UpdatedDate, GenerationFormatter.StandardFormatter)))
-                    .ForMember(d => d.Department, o => o.MapFrom(s => s.Department));
+                    .ForMember(d => d.Department, o => o.MapFrom(s => s.Department))
+                    .ForMember(d => d.Position, o => o.MapFrom(s => s.Position));
             });
 
             mapper = new Mapper(mapperConfiguration);

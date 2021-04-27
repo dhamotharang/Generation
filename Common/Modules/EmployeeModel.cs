@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Common.Modules
 {
@@ -26,5 +22,6 @@ namespace Common.Modules
         public Guid? ManagerId { get; set; }
 
         public DepartmentModel Department { get; set; }
+        public PositionModel Position { get; set; }
     }
 }
